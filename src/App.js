@@ -8,7 +8,7 @@ import {Flex} from "@chakra-ui/react"
 function App() {
   const [options, setOptions ] = useState({
     accessories: "earings", 
-    backgrounds: "1",
+    backgrounds: "galaxy",
       ears: "default",
       eyes: "angry", 
       hair: "bang",
