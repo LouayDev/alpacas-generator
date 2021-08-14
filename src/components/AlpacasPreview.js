@@ -1,35 +1,37 @@
 import {useRef, useEffect} from "react"
 import mergeImages from "merge-images";
 import {Container, Button, Box, Flex, Image,} from "@chakra-ui/react"
-import stylesOptions from "./stylesOptions"
+import stylesOptionsList from "./stylesOptionsList"
 
 export default function AlpacasPreview(props){
 	const previewImage = useRef(null)
 	const downloadImage = useRef()
 
+	//merging the images together 
    useEffect(() => {
  	   	mergeImages([
-  `alpaca/backgrounds/${props.options.backgrounds}.png`,
-  `alpaca/ears/${props.options.ears}.png`,
-  `alpaca/neck/${props.options.neck}.png`,
+  `alpaca/backgrounds/${props.styleOptions.backgrounds}.png`,
+  `alpaca/ears/${props.styleOptions.ears}.png`,
+  `alpaca/neck/${props.styleOptions.neck}.png`,
   'alpaca/nose.png',
-  `alpaca/hair/${props.options.hair}.png`, 
-  `alpaca/accessories/${props.options.accessories}.png`,
-  `alpaca/eyes/${props.options.eyes}.png`,
-  `alpaca/mouth/${props.options.mouth}.png`,
-  `alpaca/leg/${props.options.leg}.png`,
+  `alpaca/hair/${props.styleOptions.hair}.png`, 
+  `alpaca/accessories/${props.styleOptions.accessories}.png`,
+  `alpaca/eyes/${props.styleOptions.eyes}.png`,
+  `alpaca/mouth/${props.styleOptions.mouth}.png`,
+  `alpaca/leg/${props.styleOptions.leg}.png`,
 
   ]) 
   .then(b64 => {previewImage.current.src = b64; downloadImage.current.href = b64} ); 
  })
 
+   //the randomize formla 
    const randomize = (part) => {
-   	return stylesOptions.[part][Math.floor(Math.random() * (stylesOptions.[part].length - 0) + 0)]
+   	return stylesOptionsList.[part][Math.floor(Math.random() * (stylesOptionsList.[part].length - 0) + 0)]
    }
 
    const handleRandomize = () => {
-   	Object.keys(stylesOptions).map((value, index) => {
-     props.setOptions(prevOptions => ({
+   	Object.keys(stylesOptionsList).map((value, index) => {
+     props.setStyleOptions(prevOptions => ({
      	...prevOptions,
      	[value]: randomize(value)
      }))

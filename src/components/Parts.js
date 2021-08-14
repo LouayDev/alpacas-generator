@@ -1,6 +1,6 @@
 import {Grid, Button, Box, Heading, Container, useColorModeValue} from "@chakra-ui/react"
 import {useState} from "react"
-import stylesOptions from "./stylesOptions"
+import stylesOptionsList from "./stylesOptionsList"
 
 
 export default function Parts(props){
@@ -21,8 +21,8 @@ export default function Parts(props){
 	const [currentPart, setCurrentPart] = useState("")
 
 	const handleChange = (event) => {
-		props.setOptions(prevOptions => ({
-			...prevOptions,
+		props.setStyleOptions(prevStyleOptions => ({
+			...prevStyleOptions,
 			[currentPart]: event.target.innerText
 		}))
 	}
@@ -31,14 +31,14 @@ export default function Parts(props){
 		<Container centerContent  mt={20} w={{base: "xs", sm: "sm"}} >
 		 <Heading mb={4} as="h1" size="md">Accesorize the Alpacas</Heading>
 			<Grid templateColumns="repeat(3,1fr)" gap={1}>
-			{Object.keys(stylesOptions).map((part, index) => {
+			{Object.keys(stylesOptionsList).map((part, index) => {
 	            return(<Button key={part} onClick={() => {setCurrentPart(part); setIndexPart(index)}} {...ButtonStylesParts} >{part}</Button>)
 	            })}
 			</Grid>
 			<Box mb={12} mt={5}>
 			<Heading  justifySelf="center"  mb={4} as="h1" textAlign="center" center size="md">Style</Heading>
 			<Grid templateColumns="repeat(3,3fr)" gap={1}>
-			{Object.values(stylesOptions)[indexPart].map(style => {
+			{Object.values(stylesOptionsList)[indexPart].map(style => {
 				return(<Button key={style} onClick={handleChange} {...ButtonStylesParts}>{style}</Button>)
 			})}
 			</Grid>
