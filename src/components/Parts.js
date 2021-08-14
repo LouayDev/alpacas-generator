@@ -36,7 +36,7 @@ export default function Parts(props){
 	            })}
 			</Grid>
 			<Box mb={12} mt={5}>
-			<Heading  justifySelf="center"  mb={4} as="h1" textAlign="center" center size="md">Style</Heading>
+			<Heading  justifySelf="center"  mb={4} as="h1" textAlign="center" center="true" size="md">Style</Heading>
 			<Grid templateColumns="repeat(3,3fr)" gap={1}>
 			{Object.values(stylesOptionsList)[indexPart].map(style => {
 				return(<Button key={style} onClick={handleChange} {...ButtonStylesParts}>{style}</Button>)

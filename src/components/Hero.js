@@ -6,7 +6,6 @@ import {
   Button,
   Text,
   Icon,
-  Switch,
   useColorMode,
 } from "@chakra-ui/react";
 

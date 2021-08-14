@@ -30,9 +30,9 @@ export default function AlpacasPreview(props){
    }
 
    const handleRandomize = () => {
-   	Object.keys(stylesOptionsList).map((value, index) => {
-     props.setStyleOptions(prevOptions => ({
-     	...prevOptions,
+   	Object.keys(stylesOptionsList).forEach((value, index) => {
+     props.setSyleOptions(prevStyleOptions => ({
+     	...prevStyleOptions,
      	[value]: randomize(value)
      }))
 
