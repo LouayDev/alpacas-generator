@@ -21,7 +21,7 @@ export default function Parts(props){
 	const [currentPart, setCurrentPart] = useState("")
 
 	const handleChange = (event) => {
-		props.setStyleOptions(prevStyleOptions => ({
+		props.setSyleOptions(prevStyleOptions => ({
 			...prevStyleOptions,
 			[currentPart]: event.target.innerText
 		}))
