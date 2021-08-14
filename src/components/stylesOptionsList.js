@@ -1,4 +1,5 @@
-const stylesOptions = {
+//this is the styles list of alpacas: those are images sotere in the alpacas folder
+const stylesOptionsList = {
   accessories: ["earings", "flower", "glasses", "headphone"],
 		backgrounds: [
 		"blue50",
@@ -45,4 +46,4 @@ const stylesOptions = {
 	    neck: ["bend-backward", "bend-forward", "default", "thick"]
 	}
 
-export default stylesOptions
+export default stylesOptionsList
