@@ -1,15 +1,20 @@
-import {Grid, Button, Box, Heading, Container} from "@chakra-ui/react"
+import {Grid, Button, Box, Heading, Container, useColorModeValue} from "@chakra-ui/react"
 import {useState} from "react"
 import stylesOptions from "./stylesOptions"
 
 
 export default function Parts(props){
+	const buttonsBg = useColorModeValue("blue.200","blue.700" )
 	const ButtonStylesParts = {
      size:"sm",
      variant:"outline",
      rounded:"3xl",
+     w: 28,
 	 py:6,
-	 colorScheme:"blue"
+	 colorScheme:"blue",
+	 _focus: {
+	  bg: buttonsBg,
+	 }
 	}
 
 	const [indexPart, setIndexPart] = useState(0)
@@ -31,8 +36,8 @@ export default function Parts(props){
 	            })}
 			</Grid>
 			<Box mb={12} mt={5}>
-			<Heading  justifySelf="center"  mb={4} as="h1" size="md">Style</Heading>
-			<Grid templateColumns="repeat(3,1fr)" gap={1}>
+			<Heading  justifySelf="center"  mb={4} as="h1" textAlign="center" center size="md">Style</Heading>
+			<Grid templateColumns="repeat(3,3fr)" gap={1}>
 			{Object.values(stylesOptions)[indexPart].map(style => {
 				return(<Button key={style} onClick={handleChange} {...ButtonStylesParts}>{style}</Button>)
 			})}
