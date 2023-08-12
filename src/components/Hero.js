@@ -34,9 +34,9 @@ export default function Hero(){
             bgGradient="linear(to-r, green.400,purple.500)"
             fontWeight="extrabold"
           >
-            for my beautiful baby 
+            for the best developer in the world
           </Text>{" "}
-          play adn ejoy🥰! 
+         dont play too much 😂! 
         </chakra.h1>
         <chakra.p
           px={{ base: 0, lg: 24 }}
@@ -44,10 +44,8 @@ export default function Hero(){
           fontSize={{ base: "lg", md: "xl" }}
           color={useColorModeValue("gray.600",'gray.300')}
         >
-My Love, <br />
-There could never be enough words to tell you what you mean to me.
-So, instead, I will simply tell you that every single day for the rest of my life,
-I pledge to make sure I tell you that you are mine and that you are loved.
+            <br />
+          so i believe we can do a lot of things and this is a plus you know 
         </chakra.p>
           <Button
            onClick={() => toggleColorMode()}
